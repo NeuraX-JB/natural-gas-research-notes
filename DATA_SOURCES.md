@@ -1,17 +1,15 @@
-# Data use and attribution
+# Sources and attribution for the research notes
 
-This repository presents independent research and educational applications. Public access to source data does not necessarily grant unrestricted redistribution or commercial reuse.
+This repository contains research text and a figure. Source observations, models and application archives remain in the cited canonical revision; they are not bundled under local data or API paths.
 
-| Source | Material used | Where documented |
+| Source | Use in these notes | Frozen evidence |
 | :--- | :--- | :--- |
-| U.S. Energy Information Administration (EIA) | Lower 48 storage, Henry Hub spot observations and historical futures archive | [Shared source notes](lab/data/README.md), [EIA data](https://www.eia.gov/naturalgas/) |
-| NOAA Climate Prediction Center | Observed population-weighted degree days | [Shared source notes](lab/data/README.md) |
-| NOAA GFS operational archive | Archived temperature forecast fields | [Weather methodology](lab/weather/README.md) |
-| U.S. Census Bureau / us-atlas | Population sampling weights and state geometry | [Weather methodology](lab/weather/README.md), [us-atlas license](lab/weather/research/US_ATLAS_LICENSE) |
-| SEC filings | Selected reconstructed futures curve snapshots and archived price examples | [Curve explorer](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/), [Industrial simulator](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/industrial/) |
+| U.S. Energy Information Administration | Lower 48 working gas stock changes in note 001 | [Source definitions](lab/data/README.md), [source manifest](https://github.com/NeuraX-JB/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/blob/ba3b94ba3a97c3262099da73a25a3a33f06c34ee/lab/data/manifest.json), [replay CSV](https://github.com/NeuraX-JB/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/blob/ba3b94ba3a97c3262099da73a25a3a33f06c34ee/lab/storage/backtest.csv) |
+| NOAA Climate Prediction Center | Observed population-weighted CONUS HDD/CDD, base 65°F, in note 001 | [Weather definitions](lab/data/README.md), [manifest and raw-source records](https://github.com/NeuraX-JB/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/blob/ba3b94ba3a97c3262099da73a25a3a33f06c34ee/lab/data/manifest.json) |
+| SEC filings recorded by the canonical application | Two reconstructed futures curve snapshots in note 002 | [Matched contracts and filing links](lab/research/curve-repricing.md), [frozen application](https://github.com/NeuraX-JB/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/blob/ba3b94ba3a97c3262099da73a25a3a33f06c34ee/index.html) |
 
-EIA attributes the underlying Henry Hub spot price data to Refinitiv, an LSEG business. Check the relevant third-party terms before redistributing or using those quotes commercially. Filings may include third-party information and do not automatically confer a redistribution license.
+The observed-weather replay uses current-vintage files and may contain historical revisions. It does not reconstruct all first-release timestamps. SEC-derived curve dates are snapshot labels, not evidence of when the extracted values first became available.
 
-The [source manifest](lab/data/manifest.json) documents retrieval times and hashes; the [API metadata](lab/api/v1/index.json) documents coverage and units. Historical source files may contain revisions.
+The broader canonical repository also includes spot observations, forecast-weather research and geographic assets. Those projects are outside this notes package. EIA attributes its underlying spot data to Refinitiv, an LSEG business; that attribution is retained in the reference source definitions, without implying that the storage replay uses spot prices.
 
-No repository-wide license is declared. The separate us-atlas license remains applicable to its covered material. A repository-wide license and the rights to any third-party datasets or media should be reviewed independently before relicensing or commercial distribution. Nothing in this document grants new rights to third-party content.
+No repository-wide license is declared. Public access to filings or data does not by itself establish unrestricted reuse. This document grants no new rights to research text, figures, code or third-party material. See [reproduction instructions](lab/research/REPRODUCE.md) and the [snapshot record](SOURCE_SNAPSHOT.json) for evidence lineage.

@@ -1,0 +1,9 @@
+{
+  "commands": [
+    [
+      "{python}",
+      "lab/research/render_notes.py",
+      "--check"
+    ]
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "repository": "NeuraX-JB/natural-gas-research-notes",
+  "review_date": "2026-11-23",
+  "source_repository": "NeuraX-JB/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter",
+  "source_commit": "80c2e5321dadc95aadd4c7f65792fb15f0e2f156",
+  "reviewed_baseline_commit": "10f141ef886fda1e0c90567ea045bb521f952171",
+  "publication_mode": "Documented research snapshot. No live data refresh workflow is enabled here.",
+  "frozen_data_sha256": {}
+}

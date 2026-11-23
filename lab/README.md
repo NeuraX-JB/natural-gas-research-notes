@@ -1,7 +1,5 @@
-# Research lab documentation
+# Research notes documentation
 
-This repository contains one project from John Barreto's natural gas research portfolio.
+Read the [local publication index](../index.html), [storage-weather note](research/storage-weather.html), [curve-repricing note](research/curve-repricing.html) or [frozen reproduction guide](research/reproduce.html).
 
-See the [project README](../README.md) for its local entry point, methods and source files. The [canonical research lab documentation](https://github.com/NeuraX-JB/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/blob/80c2e5321dadc95aadd4c7f65792fb15f0e2f156/lab/README.md) contains the original reproduction instructions for the complete lab.
-
-[Explore the maintained research portfolio](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/).
+The Markdown files beside each reading page are the publication source. This repository bundles notes and a figure, not the full canonical pipeline. [Source definitions](data/README.md) identify the external frozen evidence. [Validation](../VALIDATION.md) checks this package, while [the evidence check](research/REPRODUCE.md) verifies the arithmetic of the cited snapshot.
