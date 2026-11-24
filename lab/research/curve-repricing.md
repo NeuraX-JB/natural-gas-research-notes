@@ -35,6 +35,10 @@ The frozen app records these filing pointers:
 
 The curve dates label the stored snapshot observations. They are not filing-publication timestamps or proof that the extracted values were available to a trader on those dates. Contracts present in only one snapshot are excluded from this matched comparison. The [evidence check](REPRODUCE.md) verifies all nine pairs and their displayed differences against the frozen app source.
 
+## How the January premium over July changed
+
+In June, January 2027 gas cost $1.136 per MMBtu more than July 2027 gas ($4.391 minus $3.255). By September that premium was $0.657 ($3.752 minus $3.095). January fell $0.479 per MMBtu more than July, narrowing the premium by that amount. Both observations compare the same pair of contracts. The SEC-derived archive records two endpoints and leaves the path between them open.
+
 ## Interpretation
 
 Comparing fixed delivery months rather than simply rolling front-month prices avoids mixing different delivery periods. The shape of the curve can be used to study how expectations for particular seasons and delivery months change, including winter premiums and calendar spreads.

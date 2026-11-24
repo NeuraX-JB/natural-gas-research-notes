@@ -14,7 +14,7 @@ python lab/research/check_evidence.py --storage-csv ../henry-hub-evidence/lab/st
 
 Use an unused destination directory. The checkout command affects only the newly cloned archive. The check reads the supplied files and prints whether the original annual storage table and nine matched-contract price differences agree. It does not fetch new observations, write a forecast, alter the archive, or refit a model.
 
-The storage check compares all 10 table rows, including the pooled sample, using the saved replay's rounded predictions. It verifies sample dates, uniqueness, finite values, MAE, relative reduction and inclusive interval coverage. The curve check reads the embedded snapshot data, intersects delivery months, and uses decimal subtraction to check every displayed difference.
+The storage check compares all 10 table rows, including the pooled sample, using the saved replay's rounded predictions. It verifies sample dates, uniqueness, finite values, MAE, relative reduction and inclusive interval coverage. It also counts the weeks when each method came closer and verifies the values used in the January and February 2018 examples. The curve check reads the embedded snapshot data, intersects delivery months, and uses decimal subtraction to check every displayed difference and the two January-over-July premiums.
 
 ## Refit or extend the model separately
 

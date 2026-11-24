@@ -1,14 +1,17 @@
-# Validate this research snapshot
+# Validate the research notes
 
-Run these commands from the repository root using Python 3.12 and Node.js 24:
+From the repository root, run the package check with Git and Python 3.10 or later. The checker and page renderer use the Python standard library. GitHub Actions runs this check under Python 3.12.
 
 ```sh
-python -m pip install -r scripts/requirements-ci.txt
 python scripts/validate.py
 ```
 
-The same commands run on pushes and pull requests. The validator checks local HTML/Markdown/CSS links, parses JSON without duplicate keys or non-standard numbers, verifies frozen-data hashes, and runs the project regression commands listed in `scripts/checks.json`. It does not fetch new observations or alter the stored research data. `python scripts/validate.py --static-only` runs only the structural and data-integrity checks.
+| Check | What it verifies |
+| --- | --- |
+| Package structure | Local HTML, Markdown and CSS link targets exist. Referenced HTML pages contain the linked section IDs when the URL includes a path and fragment. JSON files parse without duplicate keys or non-standard numbers. |
+| Generated reading pages | The committed HTML matches the Markdown sources and the landing-page template. Run `python lab/research/render_notes.py` after editing either. |
+| Published research arithmetic | A separate [frozen evidence check](lab/research/REPRODUCE.md) reads the original 463-row replay and embedded curve archive. It compares results with the published tables and worked examples. |
 
-`SOURCE_SNAPSHOT.json` records the original public source revision, the reviewed baseline, and hashes of the frozen input/data artifacts. A deliberate new data snapshot requires updating its provenance and hashes as part of a reviewed change. CI failure on a changed hash is intentional; it must not be bypassed by silently relabeling the old study.
+Use `python scripts/validate.py --static-only` for the structure checks alone. The [snapshot record](SOURCE_SNAPSHOT.json) identifies the evidence revision and the standalone packaging source. Its local data hash list is empty because the input data used by the notes live in the cited research archive. Running the package check alone confirms page consistency. Verifying the numeric results requires the separate evidence check.
 
-This is an offline validation gate. It does not establish real-time freshness, historical point-in-time availability, forecast skill, third-party source availability, or visual correctness in every browser. Open the deployed demo and inspect its displayed dates and limitations as well.
+The evidence check reads saved values. Historical release timing, live forecast performance and causes of repricing require other evidence.

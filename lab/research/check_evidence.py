@@ -57,7 +57,19 @@ def check_storage(path):
         actual = (len(rows), round(base, 2), round(model, 2), round(100 * (1 - model / base), 1), round(coverage, 1))
         if actual != ANNUAL[year]:
             raise ValueError(f"{year}: expected {ANNUAL[year]}, got {actual}")
-    return "Storage: all 10 published table rows agree with the supplied 463-row replay."
+    closer = sum(abs(row["forecast"] - row["actual"]) < abs(row["baseline"] - row["actual"]) for row in groups["All"])
+    ties = sum(abs(row["forecast"] - row["actual"]) == abs(row["baseline"] - row["actual"]) for row in groups["All"])
+    if (closer, ties) != (266, 0):
+        raise ValueError("Weekly model comparison differs from the reported count")
+    by_date = {row["week"]: row for row in raw}
+    for week, values in {
+        "2018-01-05": ("-359", "-158", "-296.7401"),
+        "2018-02-02": ("-119", "-118", "-101.535"),
+    }.items():
+        actual = tuple(Decimal(by_date[week][key]) for key in ("actual", "baseline", "forecast"))
+        if actual != tuple(map(Decimal, values)):
+            raise ValueError(f"{week}: weekly example differs from the frozen replay")
+    return "Storage: all 10 table rows, weekly comparison counts and two examples agree with the replay."
 
 
 def check_curve(path):
@@ -73,7 +85,10 @@ def check_curve(path):
         a, b = Decimal(str(before[delivery])), Decimal(str(after[delivery]))
         if (a, b, b-a) != tuple(map(Decimal, expected)):
             raise ValueError(f"{delivery}: price pair or difference does not match")
-    return "Curve: all nine matched contracts and September-minus-June differences agree."
+    jan_july = [Decimal(str(strip["2027-01"])) - Decimal(str(strip["2027-07"])) for strip in (before, after)]
+    if jan_july != [Decimal("1.136"), Decimal("0.657")]:
+        raise ValueError("January premium over July differs from the published calculation")
+    return "Curve: all nine matched contracts, price differences and January premiums over July agree."
 
 
 if __name__ == "__main__":

@@ -27,6 +27,13 @@ In the checked-in chronological replay, the weather-adjusted model's mean absolu
 
 MAE is the arithmetic mean of absolute errors in Bcf. Relative reduction is 100 × (1 − model MAE / baseline MAE). Coverage is the share of observations within the model's nominal 80% interval, including observations equal to either bound. The 78.2% aggregate coverage is 1.8 percentage points below that nominal target; it is not a confidence level for the MAE reduction. Year groups are by the target week's Friday. Annual reductions should not be averaged to obtain the overall reduction.
 
+## Two weeks from the replay
+
+Across all 463 weeks, the weather model was closer to the reported stock change on 266 and the seasonal median was closer on 197. Two weeks from the first winter show what those errors look like. Each value below is a withdrawal in billion cubic feet (Bcf), shown as a positive magnitude. The source CSV records withdrawals with a minus sign.
+
+- **5 January 2018.** The Lower 48 withdrew 359 Bcf. The five-year median put the withdrawal at 158 Bcf, a miss of 201 Bcf. The model estimated 296.74 Bcf, a miss of 62.26 Bcf. Adjusting for weather captured part of the unusually large withdrawal.
+- **2 February 2018.** The withdrawal was 119 Bcf. The seasonal median was already within 1 Bcf at 118. The weather adjustment moved the estimate to 101.5 Bcf and widened the miss to 17.5 Bcf.
+
 ## Method
 
 The benchmark is the median of five previous seasonal analogs, using the Friday closest to the same month/day in each prior year. The model fits ordinary least squares to past deviations from that benchmark, with an intercept and two features: observed population-weighted HDD and CDD deviations from their respective five-year seasonal medians.

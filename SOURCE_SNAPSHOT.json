@@ -6,5 +6,6 @@
   "source_commit": "80c2e5321dadc95aadd4c7f65792fb15f0e2f156",
   "reviewed_baseline_commit": "10f141ef886fda1e0c90567ea045bb521f952171",
   "publication_mode": "Documented research snapshot. No live data refresh workflow is enabled here.",
-  "frozen_data_sha256": {}
+  "frozen_data_sha256": {},
+  "evidence_commit": "ba3b94ba3a97c3262099da73a25a3a33f06c34ee"
 }
