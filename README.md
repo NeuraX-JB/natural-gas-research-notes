@@ -6,6 +6,10 @@ How much does observed temperature improve an estimate of U.S. gas storage? And 
 
 [Read the illustrated edition](https://neurax-jb.github.io/natural-gas-research-notes/) · [John Barreto’s portfolio](https://github.com/NeuraX-JB)
 
+## Natural Gas Field Studies
+
+Explore ten books directed by John Barreto, each with a PDF, a mobile edition and a research companion. [Browse the series](field-studies/index.html) · [Open the GitHub book index](field-studies/README.md)
+
 ## Choose a study
 
 | Study | What the evidence shows |
